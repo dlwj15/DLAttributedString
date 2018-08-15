@@ -1,6 +1,6 @@
 //
-//  DLAttributedStringTests.m
-//  DLAttributedStringTests
+//  DLAttributedString_DemoTests.m
+//  DLAttributedString_DemoTests
 //
 //  Created by 冯文杰 on 2018/8/15.
 //  Copyright © 2018年 冯文杰. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface DLAttributedStringTests : XCTestCase
+@interface DLAttributedString_DemoTests : XCTestCase
 
 @end
 
-@implementation DLAttributedStringTests
+@implementation DLAttributedString_DemoTests
 
 - (void)setUp {
     [super setUp];
