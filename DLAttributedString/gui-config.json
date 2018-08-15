@@ -1,0 +1,125 @@
+{
+  "configs": [
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "香港超高速节点(推荐)",
+      "server": "n2hk.rebirthn2hk.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "香港超高速节点(推荐)",
+      "server": "n2hk2.rebirthn2hk.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "香港超高速节点(推荐)",
+      "server": "n2hk3.rebirthn2hk.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "香港超高速节点(推荐)",
+      "server": "n2hk4.rebirthn2hk.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "新加坡超高速节点(推荐)",
+      "server": "n2sg.rebirthn2sg.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "新加坡超高速节点(推荐)",
+      "server": "n2sg2.rebirthn2sg.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "新加坡超高速节点(推荐)",
+      "server": "n2sg3.rebirthn2sg.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "新加坡超高速节点(推荐)",
+      "server": "n2sg4.rebirthn2sg.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "新加坡超高速节点(推荐)",
+      "server": "n2sg5.rebirthn2sg.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "香港普通节点",
+      "server": "n2superhk.rebirthvpn.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "香港普通节点",
+      "server": "n2superhk2.rebirthvpn.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "主力节点(美国)",
+      "server": "n2usa1.rebirthvpn.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "主力节点(美国)",
+      "server": "n2usa2.rebirthvpn.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "主力节点(美国)",
+      "server": "n2usa3.rebirthvpn.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "主力节点(欧洲)",
+      "server": "n2fr1.rebirthvpn.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "主力节点(欧洲)",
+      "server": "n2fr2.rebirthvpn.top",
+      "server_port": 20238
+    },
+    {
+      "method": "chacha20",
+      "password": "83edenU6W7",
+      "remarks": "高速中转节点(动态负载均衡)",
+      "server": "n2t.rebirthvpn.top",
+      "server_port": 20238
+    }
+  ],
+  "localPort": 1080,
+  "shareOverLan": false
+}
