@@ -15,6 +15,7 @@
 		58CD6A212124660E00C9F221 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CD6A202124660E00C9F221 /* main.m */; };
 		58CD6A2B2124660E00C9F221 /* DLAttributedString_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CD6A2A2124660E00C9F221 /* DLAttributedString_DemoTests.m */; };
 		58CD6A362124660E00C9F221 /* DLAttributedString_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CD6A352124660E00C9F221 /* DLAttributedString_DemoUITests.m */; };
+		58CD6A49212476BF00C9F221 /* NSMutableAttributedString+chained.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CD6A48212476BE00C9F221 /* NSMutableAttributedString+chained.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		58CD6A312124660E00C9F221 /* DLAttributedString_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DLAttributedString_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58CD6A352124660E00C9F221 /* DLAttributedString_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLAttributedString_DemoUITests.m; sourceTree = "<group>"; };
 		58CD6A372124660E00C9F221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58CD6A47212476BE00C9F221 /* NSMutableAttributedString+chained.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+chained.h"; sourceTree = "<group>"; };
+		58CD6A48212476BE00C9F221 /* NSMutableAttributedString+chained.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+chained.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		58CD6A102124660D00C9F221 /* DLAttributedString_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				58CD6A46212476BE00C9F221 /* DLAttributedString */,
 				58CD6A112124660D00C9F221 /* AppDelegate.h */,
 				58CD6A122124660D00C9F221 /* AppDelegate.m */,
 				58CD6A142124660E00C9F221 /* ViewController.h */,
@@ -130,6 +134,16 @@
 				58CD6A372124660E00C9F221 /* Info.plist */,
 			);
 			path = DLAttributedString_DemoUITests;
+			sourceTree = "<group>";
+		};
+		58CD6A46212476BE00C9F221 /* DLAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				58CD6A47212476BE00C9F221 /* NSMutableAttributedString+chained.h */,
+				58CD6A48212476BE00C9F221 /* NSMutableAttributedString+chained.m */,
+			);
+			name = DLAttributedString;
+			path = ../../DLAttributedString;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +279,7 @@
 				58CD6A162124660E00C9F221 /* ViewController.m in Sources */,
 				58CD6A212124660E00C9F221 /* main.m in Sources */,
 				58CD6A132124660D00C9F221 /* AppDelegate.m in Sources */,
+				58CD6A49212476BF00C9F221 /* NSMutableAttributedString+chained.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

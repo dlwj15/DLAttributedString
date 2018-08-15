@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   #                  DESC
 
   s.homepage     = "https://github.com/dlwj15/DLAttributedString"
-  s.source       = { :git => "https://github.com/dlwj15/DLAttributedString.git", :tag => "#{s.version}" }
-  s.source_files = "DLAttributedString/*.{h,m}"
+  s.source       = { :git => "https://github.com/dlwj15/DLAttributedString.git", :tag => "v0.0.1" } #:tag => "1.6.2" tag => "#{s.version}"
+  s.source_files = "DLAttributedString/*"
   s.license      = "MIT"
 
   s.author             = { "wenjie" => "749157765@qq.com" }
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
 
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  # s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
   
