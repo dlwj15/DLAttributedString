@@ -1,9 +1,10 @@
 # DLAttributedString
 ## 链式开发富文本
-    由于公司使用很多个性化文本，若使用系统提供的NSMutableAttributedString书写实在太冗余了，代码可读性也很差。如果能像Masonry一样书写代码就完美了。废话不多说，直接操刀干起来。
+公司使用很多个性化文本，若使用系统提供的NSMutableAttributedString书写实在太冗余了，代码可读性也很差。如果能像Masonry一样书写代码就完美了。废话不多说，直接操刀干起来。
 
 ### Installation
 Use the orsome [CocoaPods](https://github.com/CocoaPods/CocoaPods).
+
 In your Podfile
 ```
 pod 'DLAttributedString'
