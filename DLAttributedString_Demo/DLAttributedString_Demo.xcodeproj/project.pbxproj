@@ -16,6 +16,7 @@
 		58CD6A2B2124660E00C9F221 /* DLAttributedString_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CD6A2A2124660E00C9F221 /* DLAttributedString_DemoTests.m */; };
 		58CD6A362124660E00C9F221 /* DLAttributedString_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CD6A352124660E00C9F221 /* DLAttributedString_DemoUITests.m */; };
 		58CD6A49212476BF00C9F221 /* NSMutableAttributedString+chained.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CD6A48212476BE00C9F221 /* NSMutableAttributedString+chained.m */; };
+		E3BE265E2125672C00008F15 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E3BE265D2125672C00008F15 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		58CD6A372124660E00C9F221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58CD6A47212476BE00C9F221 /* NSMutableAttributedString+chained.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+chained.h"; sourceTree = "<group>"; };
 		58CD6A48212476BE00C9F221 /* NSMutableAttributedString+chained.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+chained.m"; sourceTree = "<group>"; };
+		E3BE265D2125672C00008F15 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		58CD6A102124660D00C9F221 /* DLAttributedString_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				E3BE265D2125672C00008F15 /* README.md */,
 				58CD6A46212476BE00C9F221 /* DLAttributedString */,
 				58CD6A112124660D00C9F221 /* AppDelegate.h */,
 				58CD6A122124660D00C9F221 /* AppDelegate.m */,
@@ -251,6 +254,7 @@
 			files = (
 				58CD6A1E2124660E00C9F221 /* LaunchScreen.storyboard in Resources */,
 				58CD6A1B2124660E00C9F221 /* Assets.xcassets in Resources */,
+				E3BE265E2125672C00008F15 /* README.md in Resources */,
 				58CD6A192124660E00C9F221 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,7 +453,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N55Q9NYJZY;
 				INFOPLIST_FILE = DLAttributedString_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +471,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N55Q9NYJZY;
 				INFOPLIST_FILE = DLAttributedString_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
