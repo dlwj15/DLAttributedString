@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   #                  DESC
 
   s.homepage     = "https://github.com/dlwj15/DLAttributedString"
-  s.source       = { :git => "https://github.com/dlwj15/DLAttributedString.git", :tag => "#{s.version}"} #:tag => "1.6.2" 
+  s.source       = { :git => "https://github.com/dlwj15/DLAttributedString.git", :tag => "0.1.0"} #:tag => "1.6.2" 
   s.source_files = "DLAttributedString/*"
   s.license      = "MIT"
 
