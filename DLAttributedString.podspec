@@ -3,13 +3,13 @@ Pod::Spec.new do |s|
 
 
   s.name         = "DLAttributedString"
-  s.version      = "0.0.2"
+  s.version      = "0.1.0"
   s.summary      = "链式开发富文本"
   # s.description  = <<-DESC
   #                  DESC
 
   s.homepage     = "https://github.com/dlwj15/DLAttributedString"
-  s.source       = { :git => "https://github.com/dlwj15/DLAttributedString.git", :tag => "0.0.2" } #:tag => "1.6.2" tag => "#{s.version}"
+  s.source       = { :git => "https://github.com/dlwj15/DLAttributedString.git", :tag => "#{s.version}"} #:tag => "1.6.2" 
   s.source_files = "DLAttributedString/*"
   s.license      = "MIT"
 
