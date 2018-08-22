@@ -1,0 +1,16 @@
+PODS:
+  - DLAttributedString (0.0.2)
+
+DEPENDENCIES:
+  - DLAttributedString (~> 0.0.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - DLAttributedString
+
+SPEC CHECKSUMS:
+  DLAttributedString: c6bc80d5fec0f18db84982e5ad7db753eccef96d
+
+PODFILE CHECKSUM: 66ff67e41d1c781681d7b309340574f91136a065
+
+COCOAPODS: 1.5.3
