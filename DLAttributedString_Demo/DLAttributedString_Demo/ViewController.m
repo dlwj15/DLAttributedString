@@ -32,7 +32,18 @@
 - (IBAction)onClickCharacterColor:(id)sender {
     NSMutableAttributedString *attributedStr = [NSMutableAttributedString attributedWithString:@"hello world"];
     attributedStr.color(UIColor.redColor)
-    .bgColor(UIColor.yellowColor);
+    .bgColor(UIColor.yellowColor)
+    .beginRange(NSMakeRange(2, 2))
+    .color(UIColor.greenColor)
+    .append(@"中国好声音", ^(NSMutableAttributedString *make) {
+        make.beginRange(NSMakeRange(2, 3))
+        .color(UIColor.blueColor)
+        .bgColor(UIColor.whiteColor);
+        make.endRange();
+        make.bFont(25);
+    });
+//    attributedStr.endRange();
+    attributedStr.bFont(25);
     self.attributedLabel.attributedText = attributedStr;
 }
 

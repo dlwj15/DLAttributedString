@@ -7,9 +7,8 @@
 //  Copyright © 2018年 冯文杰. All rights reserved.
 //
 
-#define Range NSMakeRange(0, self.length)
-
 #import "NSMutableAttributedString+chained.h"
+#import <objc/runtime.h>
 
 @implementation NSMutableAttributedString (chained)
 
@@ -41,7 +40,7 @@
     DLAttributedColor Attributed = DLAttributedColor(color) {
         [self addAttribute:NSForegroundColorAttributeName
                      value:color
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -51,7 +50,7 @@
     DLAttributedColor Attributed = DLAttributedColor(color) {
         [self addAttribute:NSBackgroundColorAttributeName
                      value:color
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -61,10 +60,10 @@
     DLAttributedLine Attributed = DLAttributedLine(s, c) {
         [self addAttribute:NSUnderlineStyleAttributeName
                      value:@(s)
-                     range:Range];
+                     range:self.changeRange];
         [self addAttribute:NSUnderlineColorAttributeName
                      value:c
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -74,10 +73,10 @@
     DLAttributedLine Attributed = DLAttributedLine(s, c) {
         [self addAttribute:NSStrikethroughStyleAttributeName
                      value:@(s)
-                     range:Range];
+                     range:self.changeRange];
         [self addAttribute:NSStrikethroughColorAttributeName
                      value:c
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -87,7 +86,7 @@
     DLAttributedFloat Attributed = DLAttributedFloat(f) {
         [self addAttribute:NSFontAttributeName
                      value:[UIFont systemFontOfSize:f]
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -97,7 +96,7 @@
     DLAttributedFloat Attributed = DLAttributedFloat(f) {
         [self addAttribute:NSFontAttributeName
                      value:[UIFont boldSystemFontOfSize:f]
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -107,7 +106,7 @@
     DLAttributedCustomFont Attributed = DLAttributedCustomFont(s, f) {
         [self addAttribute:NSFontAttributeName
                      value:[UIFont fontWithName:s size:f]
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -117,10 +116,10 @@
     DLAttributedStroke Attributed = DLAttributedStroke(color, f) {
         [self addAttribute:NSStrokeColorAttributeName
                      value:color
-                     range:Range];
+                     range:self.changeRange];
         [self addAttribute:NSStrokeWidthAttributeName
                      value:@(f)
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -130,7 +129,7 @@
     DLAttributedFloat Attributed = DLAttributedFloat(f) {
         [self addAttribute:NSKernAttributeName
                      value:@(f)
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -140,7 +139,7 @@
     DLAttributedFloat Attributed = DLAttributedFloat(f) {
         [self addAttribute:NSObliquenessAttributeName
                      value:@(f)
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -150,7 +149,7 @@
     DLAttributedFloat Attributed = DLAttributedFloat(f) {
         [self addAttribute:NSExpansionAttributeName
                      value:@(f)
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -160,18 +159,18 @@
     DLAttributedFloat Attributed = DLAttributedFloat(f) {
         [self addAttribute:NSBaselineOffsetAttributeName
                      value:@(f)
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
 }
 
-- (DLAttributedTextEffect)textEffect {
-    DLAttributedTextEffect Attributed = DLAttributedTextEffect() {
+- (DLAttributedNormal)textEffect {
+    DLAttributedNormal Attributed = DLAttributedNormal() {
         // NSString类型 目前只有NSTextEffectLetterpressStyle(凸版印刷效果)可用
         [self addAttribute:NSTextEffectAttributeName
                      value:NSTextEffectLetterpressStyle
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -198,7 +197,7 @@
         shadow.shadowOffset = offset;//阴影相对原来的偏移
         [self addAttribute:NSShadowAttributeName
                      value:shadow
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -228,7 +227,7 @@
         if (block) {
             block(paragraphStyle);
         }
-        [self addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:Range];
+        [self addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:self.changeRange];
         return self;
     };
     return Attributed;
@@ -275,10 +274,39 @@
         
         [self addAttribute:NSWritingDirectionAttributeName
                      value:directionArr
-                     range:Range];
+                     range:self.changeRange];
         return self;
     };
     return Attributed;
+}
+
+- (DLAttributedRange)beginRange {
+    DLAttributedRange attributed = DLAttributedRange(range) {
+        objc_setAssociatedObject(self, @selector(changeRange), NSStringFromRange(range), OBJC_ASSOCIATION_COPY_NONATOMIC);
+        return self;
+    };
+    return attributed;
+}
+
+- (DLAttributedNormal)endRange {
+    DLAttributedNormal attributed = DLAttributedNormal() {
+        objc_setAssociatedObject(self, @selector(changeRange), NSStringFromRange(NSMakeRange(0, 0)), OBJC_ASSOCIATION_COPY_NONATOMIC);
+        return self;
+    };
+    return attributed;
+}
+
+- (NSRange)changeRange {
+    NSRange range = NSRangeFromString(objc_getAssociatedObject(self, _cmd));
+    BOOL beyond = NSMaxRange(range) > self.length;
+    if (beyond) {
+        NSString *str = [NSString stringWithFormat:@"%s: range:%@ beyond string:\"%@\" for range:%@", __FUNCTION__, NSStringFromRange(range), self.string, NSStringFromRange(NSMakeRange(0, self.length))];
+        NSAssert(!beyond, str);
+    }
+    if (!NSEqualRanges(range, NSMakeRange(0, 0))) {
+        return range;
+    }
+    return NSMakeRange(0, self.length);
 }
 
 @end

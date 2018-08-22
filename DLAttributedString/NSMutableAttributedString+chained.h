@@ -13,8 +13,8 @@
 typedef NSMutableAttributedString *(^DLAttributedAppend)(NSString *string, void(^block)(NSMutableAttributedString *make));
 #define DLAttributedAppend(string, block) ^NSMutableAttributedString * (NSString *string, void(^block)(NSMutableAttributedString *make))
 
-typedef NSMutableAttributedString *(^DLAttributedTextEffect)(void);
-#define DLAttributedTextEffect() ^NSMutableAttributedString * ()
+typedef NSMutableAttributedString *(^DLAttributedNormal)(void);
+#define DLAttributedNormal() ^NSMutableAttributedString * ()
 
 typedef NSMutableAttributedString *(^DLAttributedColor)(UIColor *color);
 #define DLAttributedColor(color) ^NSMutableAttributedString * (UIColor *color)
@@ -45,6 +45,9 @@ typedef NSMutableAttributedString *(^DLAttributedParagraphStyle)(CGFloat lineSpa
 
 typedef NSMutableAttributedString *(^DLAttributedDirection)(NSInteger direction);
 #define DLAttributedDirection(direction) ^NSMutableAttributedString * (NSInteger direction)
+
+typedef NSMutableAttributedString *(^DLAttributedRange)(NSRange range);
+#define DLAttributedRange(range) ^NSMutableAttributedString * (NSRange range)
 
 @interface NSMutableAttributedString (chained)
 
@@ -140,7 +143,7 @@ typedef NSMutableAttributedString *(^DLAttributedDirection)(NSInteger direction)
 /**
  特殊效果，自行挖掘
  */
-@property (nonatomic, copy, readonly) DLAttributedTextEffect textEffect;
+@property (nonatomic, copy, readonly) DLAttributedNormal textEffect;
 
 /**
  网址
@@ -179,6 +182,22 @@ typedef NSMutableAttributedString *(^DLAttributedDirection)(NSInteger direction)
  3@[@(NSWritingDirectionRightToLeft | NSWritingDirectionOverride)]
  */
 @property (nonatomic, copy, readonly) DLAttributedDirection writingDirection;
+
+/**
+ 需要变更文本的range
+ 
+ 使用：beginRange
+ 
+ 需要使用：endRange
+ 
+ 以解除range对其他文本的影响
+ */
+@property (nonatomic, copy, readonly) DLAttributedRange beginRange;
+
+/**
+ 结束变更range 与beginRange成对出现
+ */
+@property (nonatomic, copy, readonly) DLAttributedNormal endRange;
 
 + (instancetype)attributed;
 + (instancetype)attributedWithString:(NSString *)string;
